@@ -3,6 +3,7 @@ import { useState } from 'react';
 import ProjectsSidebar from './components/ProjectsSidebar.jsx';
 import NewProject from './components/NewProject.jsx';
 import NoProjectSelected from './components/NoProjectSelected.jsx';
+import ProjectDetails from './components/ProjectDetails.jsx';
 
 function App() {
   const [projectsState, setProjectsState] = useState({
@@ -70,7 +71,11 @@ function App() {
 
   return (
     <main className="h-screen my-8 flex gap-8">
-      <ProjectsSidebar onStartAddProject={handleStartAddProject} projects={projectsState.projects} />
+      <ProjectsSidebar
+        onStartAddProject={handleStartAddProject}
+        projects={projectsState.projects}
+        onSelectProject={handleSelectProject}
+      />
       {content}
     </main>
   );
