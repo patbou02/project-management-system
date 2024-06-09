@@ -44,7 +44,19 @@ function App() {
     });
   }
 
-  let content;
+  function handleSelectProject(id) {
+    setProjectsState(prevState => {
+        return {
+          ...prevState,
+          selectedProjectId: id,
+        }
+      }
+    );
+  }
+
+  const selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
+
+  let content = <ProjectDetails project={selectedProject} />;
 
   // STATE
   // undefined: we are doing nothing
