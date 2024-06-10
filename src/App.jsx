@@ -86,7 +86,14 @@ function App() {
 
   const selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
 
-  let content = <ProjectDetails project={selectedProject} onDelete={handleDeleteProject} />;
+  let content = (
+    <ProjectDetails
+      project={selectedProject}
+      onDelete={handleDeleteProject}
+      onAddTask={handleAddTask}
+      onDeleteTask={handleDeleteTask}
+    />
+  );
 
   // STATE
   // undefined: we are doing nothing
