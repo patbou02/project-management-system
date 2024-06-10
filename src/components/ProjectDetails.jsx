@@ -1,3 +1,5 @@
+import Tasks from './Tasks.jsx';
+
 export default function ProjectDetails({ project, onDelete }) {
 
   const dateFormatOptions = { year: 'numeric', month: 'short', day: 'numeric' };
@@ -13,7 +15,7 @@ export default function ProjectDetails({ project, onDelete }) {
         <p className="mb-4 text-stone-400">{formattedDate}</p>
         <p className="text-stone-600 whitespace-pre-wrap">{project.description}</p>
       </header>
-      TASKS
+      <Tasks />
     </div>
   );
 }
